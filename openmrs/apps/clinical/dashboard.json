@@ -1,0 +1,357 @@
+{
+    "general": {
+        "translationKey": "DASHBOARD_TAB_GENERAL_KEY",
+        "displayByDefault": true,
+        "maxRecentlyViewedPatients": 10,
+        "sections": {
+            "patientInformation": {
+                "title": "Patient Information",
+                "name": "patientInformation",
+                "displayOrder": 0,
+                "ageLimit": 100,
+                "patientAttributes": ["SCP Status","Blood Group Status","Is_Sangam","Is_Premium_Paid"],
+                "addressFields": [
+                    "address1",
+                    "address2",
+                    "cityVillage",
+                    "countryDistrict"
+                ]
+            },
+            "labResults": {
+                "translationKey": "DASHBOARD_TITLE_LAB_RESULTS_KEY",
+                "name": "labOrders",
+                "displayOrder": 1,
+                "dashboardParams": {
+                    "title": null,
+                    "numberOfVisits": 2,
+                    "showChart": false,
+                    "showTable": true,
+                    "showDetailsButton": false,
+                    "initialAccessionCount": 0,
+                    "latestAccessionCount": 1
+                },
+                "expandedViewConfig": {
+                    "numberOfVisits": 10
+                }
+            },
+            "historyAndExaminations": {
+                "title": "History and Examinations",
+                "translationKey": "DASHBOARD_TITLE_HISTORY_AND_EXAMINATIONS_KEY",
+                "name": "vitals",
+                "isObservation": true,
+                "displayOrder": 2,
+                "dashboardParams": {
+                    "conceptNames": [
+                        "History and Examination"
+                    ],
+                    "numberOfVisits": 2
+                },
+                "allObservationDetails": {
+                    "conceptNames": [
+                        "History and Examination"
+                    ],
+                    "numberOfVisits": 7,
+                    "showDetailsButton": true,
+                    "pivotTable": {}
+                }
+            },
+            "vitals": {
+                "title": "Vitals",
+                "translationKey": "DASHBOARD_TITLE_VITALS_KEY",
+                "name": "vitals",
+                "isObservation": true,
+                "displayOrder": 3,
+                "dashboardParams": {
+                    "conceptNames": [
+                        "Vitals"
+                    ],
+                    "numberOfVisits": 2
+                },
+                "allObservationDetails": {
+                    "conceptNames": [
+                        "Vitals"
+                    ],
+                    "numberOfVisits": 2,
+                    "showDetailsButton": true,
+                    "pivotTable": {
+                        "numberOfVisits": "10",
+                        "groupBy": "encounters",
+                        "obsConcepts": [
+                            "Weight",
+                            "Vitals"
+                        ],
+                        "drugConcepts": [],
+                        "labConcepts": []
+                    }
+                }
+            },
+            "treatments": {
+                "title": "Treatments",
+                "translationKey": "DASHBOARD_TITLE_TREATMENTS_KEY",
+                "name": "treatment",
+                "displayOrder": 4,
+                "dashboardParams": {
+                    "showFlowSheet": true,
+                    "showListView": true,
+                    "showRoute": true,
+                    "showDrugForm": true,
+                    "numberOfVisits": 3,
+                    "showOtherActive": true,
+                    "showDetailsButton": true
+                },
+                "allTreatmentDetails": {
+                    "translationKey": "DASHBOARD_TITLE_TREATMENTS_KEY",
+                    "showFlowSheet": true,
+                    "showListView": true,
+                    "showRoute": true,
+                    "showDrugForm": true,
+                    "numberOfVisits": 10,
+                    "showOtherActive": true,
+                    "showDetailsButton": true
+                }
+            },
+            "ANC": {
+                "translationKey": "DASHBOARD_TITLE_ANC_KEY",
+                "isObservation": true,
+                "displayOrder": 5,
+                "dashboardParams": {
+                    "conceptNames": [
+                        "ANC"
+                    ],
+                    "numberOfVisits": 5
+                },
+                "allObservationDetails": {
+                    "conceptNames": [
+                        "ANC"
+                    ],
+                    "numberOfVisits": 10,
+                    "showDetailsButton": true,
+                    "pivotTable": {}
+                }
+            },
+            "diagnosis": {
+                "title": "Diagnosis",
+                "translationKey": "DASHBOARD_TITLE_DIAGNOSIS_KEY",
+                "name": "diagnosis",
+                "showCertainty": true,
+                "showOrder": true,
+                "displayOrder": 6
+            },
+            "programs": {
+                "title": "Programs",
+                "translationKey": "DASHBOARD_TITLE_PROGRAMS_KEY",
+                "name": "programs",
+                "displayOrder": 7
+            },
+            "radiology": {
+                "title": "Radiology",
+                "translationKey": "DASHBOARD_TITLE_RADIOLOGY_KEY",
+                "name": "radiology",
+                "displayOrder": 8
+            },
+            "radiologyOrders": {
+                "orderType": "Radiology Order",
+                "title": "Radiology Orders",
+                "name": "ordersControl",
+                "translationKey": "DASHBOARD_TITLE_RADIOLOGY_ORDERS_KEY",
+                "displayOrder": 9,
+                "dashboardParams": {
+                    "conceptNames": [
+                        "Radiology order fulfillment form"
+                    ],
+                    "numberOfVisits": 4
+                }
+            },
+            "DentalOrders": {
+                "orderType": "Dental Order",
+                "title": "Dental Orders",
+                "name": "ordersControl",
+                "translationKey": "DASHBOARD_TITLE_DENTAL_ORDERS_KEY",
+                "displayOrder": 10,
+                "dashboardParams": {
+                    "conceptNames": [
+                        "Dental order fulfillment form"
+                    ],
+                    "numberOfVisits": 4
+                }
+            },
+            "USGOrders": {
+                "orderType": "USG Order",
+                "title": "USG Orders",
+                "name": "ordersControl",
+                "translationKey": "DASHBOARD_TITLE_USG_ORDERS_KEY",
+                "displayOrder": 11,
+                "dashboardParams": {
+                    "conceptNames": [
+                        "USG order fulfillment form"
+                    ],
+                    "numberOfVisits": 4
+                }
+            },
+            "ProcedureOrders": {
+                "orderType": "Procedure Order",
+                "title": "Procedure Orders",
+                "name": "ordersControl",
+                "translationKey": "DASHBOARD_TITLE_PROCEDURE_ORDERS_KEY",
+                "displayOrder": 12,
+                "dashboardParams": {
+                    "conceptNames": [
+                        "Procedure Order Fulfillment Form"
+                    ],
+                    "numberOfVisits": 4
+                }
+            },
+            "nutritionalValues": {
+                "title": "Nutritional Values",
+                "translationKey": "DASHBOARD_TITLE_NUTRITIONAL_VALUES_KEY",
+                "name": "vitals",
+                "isObservation": true,
+                "displayOrder": 13,
+                "dashboardParams": {
+                    "conceptNames": [
+                        "HEIGHT",
+                        "Weight",
+                        "BMI",
+                        "BMI STATUS"
+                    ],
+                    "numberOfVisits": 2,
+                    "scope": "latest"
+                },
+                "allObservationDetails": {
+                    "conceptNames": [
+                        "HEIGHT",
+                        "Weight",
+                        "BMI",
+                        "BMI STATUS"
+                    ],
+                    "numberOfVisits": 2,
+                    "scope": "latest",
+                    "showDetailsButton": true,
+                    "pivotTable": {}
+                }
+            },
+            "disposition": {
+                "title": "Disposition",
+                "translationKey": "DASHBOARD_TITLE_DISPOSITION_KEY",
+                "name": "disposition",
+                "numberOfVisits": 1,
+                "displayOrder": 14
+            },
+            "visits": {
+                "title": "Visits",
+                "translationKey": "DASHBOARD_TITLE_VISITS_KEY",
+                "name": "visits",
+                "displayOrder": 15,
+                "dashboardParams": {
+                    "title": null,
+                    "maximumNoOfVisits": 8,
+                    "groupByVisits": true
+                }
+            },
+            "admissionDetails": {
+                "title": "Admission Details",
+                "translationKey": "DASHBOARD_TITLE_ADMISSION_DETAILS_KEY",
+                "name": "admissionDetails",
+                "displayOrder": 16
+            }
+        }
+    },
+    "trends": {
+        "translationKey": "DASHBOARD_TAB_TRENDS_KEY",
+        "maxRecentlyViewedPatients": 10,
+        "sections": {
+            "patientInformation": {
+                "title": "Patient Information",
+                "translationKey": "DASHBOARD_TITLE_PATIENT_INFORMATION_KEY",
+                "name": "patientInformation",
+                "patientAttributes": [
+                    "caste",
+                    "class",
+                    "education",
+                    "occupation",
+                    "debt",
+                    "distanceFromCenter",
+                    "isUrban",
+                    "cluster",
+                    "RationCard",
+                    "familyIncome"
+                ],
+                "addressFields": [
+                    "address1",
+                    "address2",
+                    "cityVillage",
+                    "countryDistrict"
+                ],
+                "displayOrder": 0
+            },
+            "growthChart": {
+                "type": "observationGraph",
+                "name": "observationGraph",
+                "title": "Growth Chart",
+                "config": {
+                    "yAxisConcepts": [
+                        "Weight"
+                    ],
+                    "referenceData": "growthChartReference.csv",
+                    "numberOfVisits": 20
+                },
+                "displayOrder": 1
+            },
+            "BP": {
+                "type": "observationGraph",
+                "name": "observationGraph",
+                "title": "BP",
+                "config": {
+                    "yAxisConcepts": [
+                        "Systolic Data",
+                        "Diastolic Data"
+                    ],
+                    "xAxisConcept": "observationDateTime",
+                    "numberOfVisits": 10
+                },
+                "displayOrder": 2
+            },
+            "weight/BMI": {
+                "type": "observationGraph",
+                "name": "observationGraph",
+                "title": "Weight/BMI",
+                "config": {
+                    "yAxisConcepts": [
+                        "Weight",
+                        "BMI"
+                    ],
+                    "xAxisConcept": "observationDateTime",
+                    "numberOfVisits": 10
+                },
+                "displayOrder": 3
+            },
+            "diabetes/BloodSugar": {
+                "type": "observationGraph",
+                "name": "observationGraph",
+                "title": "Diabetes/Blood Sugar",
+                "config": {
+                    "yAxisConcepts": [
+                        "Blood Sugar Fasting",
+                        "Blood Sugar P.P"
+                    ],
+                    "xAxisConcept": "observationDateTime",
+                    "numberOfVisits": 10
+                },
+                "displayOrder": 4
+            },
+            "observationGraph": {
+                "type": "observationGraph",
+                "name": "observationGraph",
+                "title": "Pulse",
+                "config": {
+                    "yAxisConcepts": [
+                        "Pulse Data"
+                    ],
+                    "xAxisConcept": "observationDateTime",
+                    "numberOfVisits": 10
+                },
+                "displayOrder": 5
+            }
+        }
+    }
+}

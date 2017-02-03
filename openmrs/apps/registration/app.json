@@ -1,0 +1,102 @@
+{
+        "id": "bahmni.registration",
+        "instanceOf":"bahmni.template.registration",
+        "description": "Bahmni Patient Registration App",
+        "extensionPoints": [
+            {
+                "id": "org.bahmni.registration.patient.search.result.action",
+                "description": "Bahmni Patient Search Result Action"
+            },
+            {
+                "id": "org.bahmni.registration.patient.next",
+                "description": "After Bahmni Patient Registration, forward url configuration"
+            }
+        ],
+        "contextModel": [
+            "patientUuid",
+            "activeVisitUuid"
+        ],
+	
+        "config" : {
+            "mandatoryPersonAttributes" : [
+                "Tribe",
+                "Is_Tribal",
+                "Is_Sangam",
+                "Is_Premium_Paid",
+                "Visiting"],
+	    "patientInformation": {
+                "additionalPatientInformation": {
+                    "title": "Additional Patient Information",
+                    "attributes": [
+                        "distanceFromCenter",
+                        "isUrban",
+                        "cluster",
+                        "RationCard",
+                        "familyIncome",
+                        "debt",
+                        "cluster"
+                    ]
+                },
+                "hidden": {
+                    "attributes": [
+                        "primaryContact"
+                    ]
+                },
+                "defaults":  {
+                    "class": "General",
+                    "landHolding": 2
+                }
+            },
+            "addressHierarchy": {
+                "showAddressFieldsTopDown": false,
+                "freeTextAddressFields": ["address2", "address1"]
+            },
+            "relationshipTypeMap": {
+                "Doctor":"provider",
+                "Parent":"patient"
+            },
+
+            "autoCompleteFields":["familyName"],
+            "defaultIdentifierPrefix": "TRI",
+            "defaultVisitType": "OPD",
+            "searchByIdForwardUrl": "/patient/{{patientUuid}}",
+            "showMiddleName": false,
+            "showCasteSameAsLastNameCheckbox": false,
+            "printOptions": [
+                {
+                    "translationKey": "REGISTRATION_PRINT_REG_CARD_LOCAL_KEY",
+                    "templateUrl": "/bahmni_config/openmrs/apps/registration/registrationCardLayout/print_local.html",
+                    "shortcutKey": "l"
+                },
+                {
+                    "translationKey": "REGISTRATION_PRINT_REG_CARD_KEY",
+                    "templateUrl": "/bahmni_config/openmrs/apps/registration/registrationCardLayout/print.html",
+                    "shortcutKey": "p"
+                },
+                {
+                    "translationKey": "REGISTRATION_PRINT_SUPPLEMENTAL_PAPER",
+                    "templateUrl": "/bahmni_config/openmrs/apps/registration/supplementalPaperLayout/print.html",
+                    "shortcutKey": "r"
+                }
+            ],
+            "conceptSetUI": {
+                "Departments": {
+                    "required": true,
+                    "buttonselect": true
+                }
+            },
+            "fieldValidation" : {
+              "primaryContact" : {"pattern" : "[0-9]{8,10}", "errorMessage" : "Should be 12 characters starting with 91 (country code)"},
+                "familyName" : {"pattern" : "[a-zA-Z()/. -]{0,}", "errorMessage" : "Should contain characters"},
+                "givenName" : {"pattern" : "[a-zA-Z()/. -]{0,}", "errorMessage" : "Should contain characters"},
+                "middleName" : {"pattern" : "[a-zA-Z()/. -]{0,}", "errorMessage" : "Should contain characters"}
+            },
+            "patientSearch": {
+                "address": {
+                    "label": "Area",
+                    "placeholder": "eg:- Ayyankolly",
+                    "field": "address2"
+                }
+            }
+        }
+}
